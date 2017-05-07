@@ -1,0 +1,211 @@
+/* Cardo for headers. */
+@import url('https://fonts.googleapis.com/css?family=Cardo');
+/* Open Sans for tables and box text. */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/* Rochester for drop caps. */
+@import url('https://fonts.googleapis.com/css?family=Rochester');
+
+/* Setup for showing something like an A4 size roll when viewed on screen. */
+@media screen {
+  html,
+  body {
+    background: #ccc;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 170mm;
+    padding: 10mm;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background: #fff;
+    -moz-box-shadow: 5px 5px 1px #999;
+    -webkit-box-shadow: 5px 5px 1px #999;
+    box-shadow: 5px 5px 1px #999;
+    background: url('bg.png');
+  }
+}
+/* Setup for when we actually print it. */
+@media print {
+  .pagebreak {
+    display: none;
+    page-break-before: always;
+    page-break-after: always;
+  }
+}
+
+body {
+  font-size: 12pt;
+  line-height: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+  color: #58180D;
+  font-variant-caps: small-caps;
+  font-family: 'Cardo', serif;
+  margin-bottom: 0.1em;
+  page-break-after: avoid;
+}
+h1 {
+  margin-bottom: 0.3em;
+}
+h3 {
+  border-bottom: 2px solid #C9AD6A;
+}
+
+/* Indent any paragraph after first */
+p + p {
+  text-indent: 1em;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  /*text-align: justify;*/
+}
+
+/*
+  Tables with even-odd alternate coloured rows.
+  First column is centered, rest is left aligned.
+*/
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+table tr,
+table th,
+table td {
+  border: 0;
+  padding: 0.2ex;
+  text-align: left;
+  font-size: 11pt;
+}
+table th {
+  vertical-align: bottom;
+}
+table td {
+  vertical-align: top;
+}
+tr:nth-child(even) {
+  background: #f0dbb5;
+}
+th:nth-child(1),
+td:nth-child(1) {
+  text-align: center;
+}
+
+blockquote {
+  margin: 1em 0;
+  width: 100%;
+  font-style: italic;
+}
+blockquote[cite]:after,
+blockquote cite:before {
+  content: "— " attr(cite);
+}
+blockquote[cite]:after,
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+}
+
+/* List with dots aligned to the rest of the text. */
+ul {
+  margin: 0.5em 0;
+  padding-left: 1.2em;
+}
+
+/* Drop Caps, ie. that fancy big first letter of chapters. */
+.dropcap:first-letter {
+  /*initial-letter: 2;*/
+  float: left;
+  font-size: 4em;
+  line-height: 1em;
+  padding-right: 0.2em;
+  font-family: 'Rochester', cursive;
+}
+
+/* Alternative manual colour and aligning. */
+h3.blue-head {
+  text-align: right;
+  color: #668fad;
+  border-bottom: 2px solid #668fad;
+  line-height: 100%;
+}
+
+label.table-header {
+  font-size: 105%;
+  font-weight: bold;
+  margin-top: 0.5em;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.opening-flavour {
+  margin-top: 0.2em;
+  margin-bottom: 0.3em;
+  font-style: italic;
+}
+
+.readaloud,
+.sidenote {
+  padding: 1.5ex;
+  margin: 0.8em 0 0.8em 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 170%;
+  font-size: 11pt;
+}
+.readaloud {
+  background: #e4d0bf;
+  border: solid #9C2B1B;
+  border-width: 0 2px;
+}
+.sidenote {
+  background: #e8dfd6;
+  border: solid #000;
+  border-width: 2px 0;
+}
+
+.sidenote h1,
+.sidenote h2,
+.sidenote h3,
+.sidenote h4,
+.sidenote h5,
+.sidenote h6 {
+  margin-top: 0;
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* */
+.two-columns {
+  column-count: 2;
+  column-gap: 1cm;
+}
+
+/*
+  Some further inspiration can be found here:
+  https://github.com/evanbergeron/DND-5e-LaTeX-Template
+  https://github.com/Valloric/statblock5e
+
+  Some such includes:
+  F7F2E5 "bgtan" e.g. used for background and quotebox
+  58180D "titlered" e.g. used for titles
+  C9AD6A "undergold" e.g. used for titlerules
+  B89A67 "uppergold" e.g. used for pagenumbers and footer
+  E69A28 "puregold" e.g. used for top line in newer monsterbox
+  FDF1DC "monstertan" e.g. used for newer monsterblock
+  F0DBB5 "monstertandark" e.g. used for older monsterbox
+  E0E5C1 "commentgreen" e.g. used in table and green commentbox
+  E9CDC2 "itemtablepink" e.g. used in item tables instead of the green
+  9C2B1B "rulered" e.g. used for triangular rule in statsblock
+*/
