@@ -2,7 +2,7 @@
 
 A HTML/CSS template for laying out RPG print media like adventures or manuals.
 
-![example](https://github.com/cskau/rpg-template/example.png)
+![example](example.png)
 
 Uses Hyphenator to Hyphenate:
 
